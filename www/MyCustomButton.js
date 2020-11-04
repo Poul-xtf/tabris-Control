@@ -52,6 +52,8 @@ class MyCustomButton extends tabris.Widget{
     }
 }
 tabris.NativeObject.defineProperties(MyCustomButton.prototype, {
+  textName: {type: 'string', default: '你好tabris'},
+  maxLines:{type:'number',default:0},
    animation: {type: 'any', default: null},
   autoPlay: {type: 'boolean', default: true},
   speed: {type: 'number', default: 1},
