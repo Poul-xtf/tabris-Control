@@ -12,5 +12,13 @@
             android:name="com.example.tabris.android.OPERATOR.com.tabris.Button"
             android:value="com.tabris.Button.MyCustomView" />
         </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+          <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <source-file src="src/android/MyCustomView.kt" target-dir="src/com/tabris/Button" />  
+
     </platform> 
 </plugin>
