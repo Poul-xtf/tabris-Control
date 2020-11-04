@@ -2,7 +2,7 @@ class MyCustomButton extends tabris.Widget{
 
 	 constructor(properties) {
 	    super(properties);
-	    Console.log(properties)
+	    console.log(properties)
 	    this._state = 'finish';
 	    this.text = properties.text;
 	    this.composition = null;
@@ -17,19 +17,21 @@ class MyCustomButton extends tabris.Widget{
 	}
 
 	//---------与原生交换属性-------
-	set text(value){
+	set textButton(value){
 		this.text = value;
 	}
 
-	get text(){
+	get buttonText(){
 		return this.text;
 	}
 
 	//-----覆写_listen方法，并调用_nativeListen以便在原生控件触发事件时收到通知。----
 	_listen(name,listening){
 		if(name==='select'){
+			console.log("---//"+name)
 			this._nativeListen(name,listening);
 		}else{
+			console.log("---//---"+name)
 			super._listen(name,listening);
 		}
 	}
