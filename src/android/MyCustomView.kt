@@ -32,13 +32,13 @@ class MyCustomView(private val scope: ActivityScope) : ObjectHandler<Button> {
     override fun call(button: Button, method: String, properties: V8Object) = when (method) {
         "toast-hello" -> Toast.makeText(scope.activity, "Hello", Toast.LENGTH_SHORT).show()
         "toast-noHello" -> Toast.makeText(scope.activity, "noHello", Toast.LENGTH_SHORT).show()
-        else -> Toast.makeText(scope.activity, "null", Toast.LENGTH_SHORT).show()
+        else -> Toast.makeText(scope.activity, "你好世界", Toast.LENGTH_SHORT).show()
     }
 
     //接受listen
     override fun listen(id: String, button: Button, event: String, listen: Boolean) = when (event) {
         "select" -> button.setOnClickListener { scope.remoteObject(it)?.notify("select") }
-        else ->Toast.makeText(scope.activity, "null", Toast.LENGTH_SHORT).show()/* super.listen(id, textInput, event, listen)*/
+        else ->Toast.makeText(scope.activity, "你好吗朋友", Toast.LENGTH_SHORT).show()/* super.listen(id, textInput, event, listen)*/
     }
 
     override fun destroy(button: Button) {
