@@ -2,7 +2,9 @@ class MyCustomButton extends tabris.Widget{
 
 	 constructor(properties) {
 	    super(properties);
+	    Console.log(properties)
 	    this._state = 'finish';
+	    this.text = properties.text;
 	    this.composition = null;
 	    this.on('stateChanged', ({state}) => this._state = state);
 	    this.on('animationChanged', () => this._handleAutoPlay());
@@ -15,12 +17,12 @@ class MyCustomButton extends tabris.Widget{
 	}
 
 	//---------与原生交换属性-------
-	set myProperty(value){
-		this._nativeType('myProperty',value);
+	set text(value){
+		this.text = value;
 	}
 
-	get myProperty(){
-		return this._nativeGet('myProperty');
+	get text(){
+		return this.text;
 	}
 
 	//-----覆写_listen方法，并调用_nativeListen以便在原生控件触发事件时收到通知。----
