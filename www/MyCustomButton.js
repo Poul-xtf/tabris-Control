@@ -53,7 +53,25 @@ class MyCustomButton extends tabris.Widget{
 }
 tabris.NativeObject.defineProperties(MyCustomButton.prototype, {
   text: {type: 'string', default: "你好tabris"},
-  maxLines:{type:'int',default:0}
+  maxLines:{type:'int',default:0},
+   animation: {type: 'any', default: null},
+  autoPlay: {type: 'boolean', default: true},
+  speed: {type: 'number', default: 1},
+  playing: {type: 'boolean', nocache: true, readonly: true},
+  repeatCount: {
+    type: {
+      encode(value) {
+        return isFinite(value) ? value : -1;
+      }
+    },
+    default: 0
+  },
+  repeatMode: {choice: ['restart', 'reverse'], type: 'string', default: 'restart'},
+  scaleMode: {choice: ['auto', 'fill'], type: 'string', default: 'auto'},
+  scale: {type: 'number', default: 1},
+  frame: {type: 'number', nocache: true},
+  minFrame: {type: 'number', nocache: true},
+  maxFrame: {type: 'number', nocache: true}
 });
 
 tabris.NativeObject.defineEvents(MyCustomButton.prototype, {
