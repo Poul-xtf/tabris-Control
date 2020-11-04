@@ -31,9 +31,4 @@ class MyCustomButton extends tabris.Widget{
 }
 
 
-module.exports ={
-	constant:null,
-	init:function(){
-		this.constant = MyCustomWidget()
-	},
-};
+module.exports = MyCustomButton
