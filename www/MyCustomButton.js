@@ -17,11 +17,11 @@ class MyCustomButton extends tabris.Widget{
 	}
 
 	//---------与原生交换属性-------
-	set text(value){
+	set texttt(value){
 		this._text = value;
 	}
 
-	get text(){
+	get texttt(){
 		return this._text;
 	}
 
