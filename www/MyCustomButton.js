@@ -31,6 +31,11 @@ class MyCustomButton extends tabris.Widget{
 			super._listen(name,listening);
 		}
 	}
+	 _handleAutoPlay() {
+	    if (this.autoPlay) {
+	    	
+	    }
+	}
 	destory(){
 	    this.el.dispose();
 	    this.tabs.forEach((tabObj)=>{
