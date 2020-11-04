@@ -15,6 +15,7 @@ class MyCustomView(private val scope: ActivityScope) : ObjectHandler<Button> {
 
     override fun create(id: String, properties: V8Object): Button {
         val button = Button(scope.activity)
+        button.text="哈哈哈哈"
         button.setOnClickListener {
             scope.remoteObject(it)?.notify("select")
         }
