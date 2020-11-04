@@ -5,10 +5,10 @@ class MyCustomButton extends tabris.Widget{
 	    console.log(properties)
 	    this._state = 'finish';
 	    this._text = properties.text;
-	    this.composition = null;
-	    this.on('stateChanged', ({state}) => this._state = state);
-	    this.on('animationChanged', () => this._handleAutoPlay());
-	    this.on('load', () => {}); // required to get this.composition in this._trigger()
+	    // this.composition = null;
+	    // this.on('stateChanged', ({state}) => this._state = state);
+	    // this.on('animationChanged', () => this._handleAutoPlay());
+	    // this.on('load', () => {}); // required to get this.composition in this._trigger()
 	}
 
 	//----自定义控件类必须覆写_nativeType属性的getter以返回与原生实现匹配的类型----
@@ -53,25 +53,25 @@ class MyCustomButton extends tabris.Widget{
 }
 tabris.NativeObject.defineProperties(MyCustomButton.prototype, {
   textName: {type: 'string', default: '你好tabris'},
-  maxLines:{type:'int',default:0},
-   animation: {type: 'any', default: null},
-  autoPlay: {type: 'boolean', default: true},
-  speed: {type: 'number', default: 1},
-  playing: {type: 'boolean', nocache: true, readonly: true},
-  repeatCount: {
-    type: {
-      encode(value) {
-        return isFinite(value) ? value : -1;
-      }
-    },
-    default: 0
-  },
-  repeatMode: {choice: ['restart', 'reverse'], type: 'string', default: 'restart'},
-  scaleMode: {choice: ['auto', 'fill'], type: 'string', default: 'auto'},
-  scale: {type: 'number', default: 1},
-  frame: {type: 'number', nocache: true},
-  minFrame: {type: 'number', nocache: true},
-  maxFrame: {type: 'number', nocache: true}
+  maxLines:{type:'number',default:0},
+  //  animation: {type: 'any', default: null},
+  // autoPlay: {type: 'boolean', default: true},
+  // speed: {type: 'number', default: 1},
+  // playing: {type: 'boolean', nocache: true, readonly: true},
+  // repeatCount: {
+  //   type: {
+  //     encode(value) {
+  //       return isFinite(value) ? value : -1;
+  //     }
+  //   },
+  //   default: 0
+  // },
+  // repeatMode: {choice: ['restart', 'reverse'], type: 'string', default: 'restart'},
+  // scaleMode: {choice: ['auto', 'fill'], type: 'string', default: 'auto'},
+  // scale: {type: 'number', default: 1},
+  // frame: {type: 'number', nocache: true},
+  // minFrame: {type: 'number', nocache: true},
+  // maxFrame: {type: 'number', nocache: true}
 });
 
 tabris.NativeObject.defineEvents(MyCustomButton.prototype, {
