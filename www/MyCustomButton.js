@@ -26,7 +26,7 @@ class MyCustomButton extends tabris.Widget{
 	}
 
 	buttonText(){
-		return "hhhhhhhh"
+		return "hhhhhhhh";
 	}
 
 	//-----覆写_listen方法，并调用_nativeListen以便在原生控件触发事件时收到通知。----
