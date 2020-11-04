@@ -33,7 +33,7 @@ class MyCustomButton extends tabris.Widget{
 	}
 	 _handleAutoPlay() {
 	    if (this.autoPlay) {
-	    	
+
 	    }
 	}
 	destory(){

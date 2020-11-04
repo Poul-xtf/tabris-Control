@@ -9,7 +9,7 @@
     <platform name="android">  <!-- 平台类型 -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
         <meta-data
-            android:name="com.example.tabris.android.OPERATOR.com.tabris.Button"
+            android:name="com.eclipsesource.tabris.android.HANDLER.com.tabris.Button"
             android:value="com.tabris.Button.MyCustomView" />
         </config-file>
 
