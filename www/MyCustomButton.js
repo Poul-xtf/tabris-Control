@@ -4,7 +4,7 @@ class MyCustomButton extends tabris.Widget{
 	    super(properties);
 	    console.log(properties)
 	    this._state = 'finish';
-	    this.text = properties.text;
+	    this._text = properties.text;
 	    this.composition = null;
 	    this.on('stateChanged', ({state}) => this._state = state);
 	    this.on('animationChanged', () => this._handleAutoPlay());
@@ -17,12 +17,12 @@ class MyCustomButton extends tabris.Widget{
 	}
 
 	//---------与原生交换属性-------
-	set textButton(value){
-		this.text = value;
+	set buttonText(value){
+		this._text = value;
 	}
 
 	get buttonText(){
-		return this.text;
+		return this._text;
 	}
 
 	//-----覆写_listen方法，并调用_nativeListen以便在原生控件触发事件时收到通知。----
@@ -49,18 +49,9 @@ class MyCustomButton extends tabris.Widget{
 }
 tabris.NativeObject.defineProperties(MyCustomButton.prototype, {
   animation: {type: 'any', default: null},
-  text:{type:'string',default:'嗯嗯'}
   autoPlay: {type: 'boolean', default: true},
   speed: {type: 'number', default: 1},
   playing: {type: 'boolean', nocache: true, readonly: true},
-  repeatCount: {
-    type: {
-      encode(value) {
-        return isFinite(value) ? value : -1;
-      }
-    },
-    default: 0
-  },
   repeatMode: {choice: ['restart', 'reverse'], type: 'string', default: 'restart'},
   scaleMode: {choice: ['auto', 'fill'], type: 'string', default: 'auto'},
   scale: {type: 'number', default: 1},
