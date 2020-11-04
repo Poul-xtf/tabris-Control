@@ -1,6 +1,6 @@
 class MyCustomButton extends tabris.Widget{
 
-	 constructor(properties) {
+	constructor(properties) {
 	    super(properties);
 	    console.log(properties)
 	    // this._state = 'finish';
@@ -9,7 +9,7 @@ class MyCustomButton extends tabris.Widget{
 	    // this.on('stateChanged', ({state}) => this._state = state);
 	    // this.on('animationChanged', () => this._handleAutoPlay());
 	    // this.on('load', () => {}); // required to get this.composition in this._trigger()
-	  }
+	}
 
 	//----自定义控件类必须覆写_nativeType属性的getter以返回与原生实现匹配的类型----
 	get _nativeType(){
@@ -25,9 +25,9 @@ class MyCustomButton extends tabris.Widget{
 		return this._text;
 	}
 
-	buttonText(){
-		return "hhhhhhhh";
-	}
+	// buttonText(){
+	// 	return "hhhhhhhh";
+	// }
 
 	//-----覆写_listen方法，并调用_nativeListen以便在原生控件触发事件时收到通知。----
 	_listen(name,listening){
@@ -61,4 +61,4 @@ tabris.NativeObject.defineEvents(MyCustomButton.prototype, {
   update: {native: true},
 });
 
-module.exports = MyCustomButton
+module.exports = MyCustomButton;
