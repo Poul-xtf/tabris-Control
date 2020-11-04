@@ -1,0 +1,17 @@
+{
+  "name": "com.tabris.Button",
+  "version": "1.0.0",
+  "description": "这是一个Cordova的一个Andoird自定义button",
+   "cordova": {
+    "id": "my_view_button",
+    "platforms": [
+      "android"
+    ]
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xuxu",
+  "license": "ISC"
+}

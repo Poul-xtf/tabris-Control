@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="my_view_button" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>my_view_button</name>
+    <js-module name="MyCustomButton" src="www/MyCustomButton.js">
+        <clobbers target="MyCustomButton" />
+    </js-module>
+
+      <!--添加我们自己的平台  -->
+    <platform name="android">  <!-- 平台类型 -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <meta-data
+            android:name="com.example.tabris.android.OPERATOR.com.tabris.Button"
+            android:value="com.tabris.Button.MyCustomView" />
+        </config-file>
+    </platform> 
+</plugin>
