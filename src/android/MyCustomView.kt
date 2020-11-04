@@ -1,5 +1,5 @@
 package com.tabris.Button
-
+ 
 import android.widget.Button
 import android.widget.Toast
 import com.eclipsesource.tabris.android.*
@@ -19,7 +19,7 @@ class MyCustomView(private val scope: ActivityScope) : ObjectHandler<Button> {
         button.setOnClickListener {
             scope.remoteObject(it)?.notify("select")
         }
-        return Button(scope.activity)
+        return button
     }
 
     override val properties by lazy {
